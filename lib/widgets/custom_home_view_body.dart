@@ -4,6 +4,14 @@ import 'package:flutter/material.dart';
 
 class CustomHomeViewBody extends StatelessWidget {
   const CustomHomeViewBody({super.key});
+  final List<String> images = const [
+    'assets/images/Image Placeholder 400x600.png',
+    'assets/images/Image Placeholder 1.png',
+    'assets/images/Image Placeholder 400x600.png',
+    'assets/images/Image Placeholder 1.png',
+    'assets/images/Image Placeholder 400x600.png',
+    'assets/images/Image Placeholder 1.png',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +60,34 @@ class CustomHomeViewBody extends StatelessWidget {
           ),
           const CustomRow(
             text: 'Recommended For You',
+          ),
+          const SizedBox(
+            height: 18,
+          ),
+          SizedBox(
+            height: 200,
+            width: double.infinity,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 32),
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(right: 18),
+                    child: Image.asset(
+                      images[index],
+                    ),
+                  );
+                },
+                itemCount: images.length,
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 36,
+          ),
+          const CustomRow(
+            text: 'Best Seller',
           ),
         ],
       ),
