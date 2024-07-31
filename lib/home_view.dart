@@ -2,8 +2,17 @@ import 'package:c11_exam_sun_online/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class HomeView extends StatelessWidget {
+import 'widgets/custom_home_view_body.dart';
+
+class HomeView extends StatefulWidget {
   const HomeView({super.key});
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +40,7 @@ class HomeView extends StatelessWidget {
               style: TextStyle(
                 fontSize: 24,
                 fontFamily: 'SF Pro Display',
+                color: kPrimaryColor,
               ),
             ),
             Text(
@@ -51,6 +61,36 @@ class HomeView extends StatelessWidget {
               color: kPrimaryColor,
               size: 24,
             ),
+          ),
+        ],
+      ),
+      body: const CustomHomeViewBody(),
+      bottomNavigationBar: BottomNavigationBar(
+        unselectedItemColor: const Color(0xff6A6A8B),
+        selectedItemColor: kPrimaryColor,
+        currentIndex: selectedIndex,
+        onTap: (index) {
+          selectedIndex = index;
+          setState(() {});
+        },
+        items: const [
+          BottomNavigationBarItem(
+            icon: FaIcon(
+              FontAwesomeIcons.house,
+            ),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: FaIcon(
+              FontAwesomeIcons.magnifyingGlass,
+            ),
+            label: 'Search',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.library_books_rounded,
+            ),
+            label: 'Library',
           ),
         ],
       ),
