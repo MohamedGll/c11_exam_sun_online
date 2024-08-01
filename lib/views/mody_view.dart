@@ -1,8 +1,6 @@
 import 'package:c11_exam_sun_online/constant.dart';
-import 'package:c11_exam_sun_online/widgets/circular_label.dart';
 import 'package:c11_exam_sun_online/widgets/custom_mody_view_body.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ModyView extends StatefulWidget {
   const ModyView({super.key});
@@ -18,6 +16,8 @@ class _ModyViewState extends State<ModyView> {
     return Scaffold(
       body: const CustomModyViewBody(),
       bottomNavigationBar: BottomNavigationBar(
+        showSelectedLabels: true,
+        showUnselectedLabels: false,
         currentIndex: selectedIndex,
         onTap: (index) {
           selectedIndex = index;
@@ -26,34 +26,43 @@ class _ModyViewState extends State<ModyView> {
         selectedItemColor: k2PrimaryColor,
         unselectedItemColor: const Color(0xff667085),
         type: BottomNavigationBarType.fixed,
+        selectedLabelStyle: const TextStyle(
+          fontFamily: 'SF Pro Display',
+          fontSize: 24,
+          fontWeight: FontWeight.w900,
+        ),
         items: const [
           BottomNavigationBarItem(
-            icon: FaIcon(FontAwesomeIcons.house),
-            label: '',
-            activeIcon: CircularLabel(
-              radius: 12.0,
+            icon: ImageIcon(
+              AssetImage(
+                'assets/images/home.png',
+              ),
             ),
+            label: '.',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.menu),
-            label: '',
-            activeIcon: CircularLabel(
-              radius: 12.0,
+            icon: ImageIcon(
+              AssetImage(
+                'assets/images/menu.png',
+              ),
             ),
+            label: '.',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today),
-            label: '',
-            activeIcon: CircularLabel(
-              radius: 12.0,
+            icon: ImageIcon(
+              AssetImage(
+                'assets/images/calender.png',
+              ),
             ),
+            label: '.',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: '',
-            activeIcon: CircularLabel(
-              radius: 12.0,
+            icon: ImageIcon(
+              AssetImage(
+                'assets/images/person.png',
+              ),
             ),
+            label: '.',
           ),
         ],
       ),

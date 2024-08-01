@@ -1,6 +1,7 @@
 import 'package:c11_exam_sun_online/constant.dart';
 import 'package:c11_exam_sun_online/widgets/custom_app_bar.dart';
 import 'package:c11_exam_sun_online/widgets/custom_mody_row.dart';
+import 'package:c11_exam_sun_online/widgets/exercise_item.dart';
 import 'package:c11_exam_sun_online/widgets/feeling_item.dart';
 import 'package:flutter/material.dart';
 
@@ -26,133 +27,193 @@ class CustomModyViewBody extends StatelessWidget {
       child: Column(
         children: [
           const SizedBox(
-            height: 32,
+            height: 55,
           ),
           const CustomAppBar(),
-          const SizedBox(
-            height: 32,
-          ),
-          const Row(
-            children: [
-              Text(
-                'Hello, ',
-                style: TextStyle(
-                  fontSize: 22,
-                  fontFamily: 'SF Pro Display',
-                ),
-              ),
-              Text(
-                'Sara Rose',
-                style: TextStyle(
-                  fontSize: 22,
-                  fontFamily: 'SF Pro Display',
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 32,
-          ),
-          const Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'How are you feeling today ?',
-              style: TextStyle(
-                fontSize: 18,
-                fontFamily: 'SF Pro Display',
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 22,
-          ),
-          SizedBox(
-            height: 110,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                return FeelingItem(
-                  image: images[index],
-                  label: labels[index],
-                );
-              },
-              itemCount: images.length,
-            ),
-          ),
-          const SizedBox(
-            height: 32,
-          ),
-          const CustomModyRow(
-            text: 'Feature',
-          ),
-          Container(
-            decoration: BoxDecoration(
-              color: const Color(0xffECFDF3),
-              borderRadius: BorderRadius.circular(18),
-            ),
-            child: Column(
+          Expanded(
+            child: ListView(
               children: [
-                ListTile(
-                  title: const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 18),
-                    child: Text(
-                      'Positive vibes',
+                const Row(
+                  children: [
+                    Text(
+                      'Hello, ',
                       style: TextStyle(
-                        color: Color(0xff344054),
-                        fontSize: 18,
+                        fontSize: 22,
+                        fontFamily: 'SF Pro Display',
+                      ),
+                    ),
+                    Text(
+                      'Sara Rose',
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontFamily: 'SF Pro Display',
                         fontWeight: FontWeight.w600,
-                        fontFamily: 'SF Pro Display',
                       ),
                     ),
-                  ),
-                  subtitle: const Padding(
-                    padding: EdgeInsets.only(bottom: 10),
-                    child: Text(
-                      'Boost your mood with positive vibes',
-                      maxLines: 2,
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.black,
-                        fontFamily: 'SF Pro Display',
-                      ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 32,
+                ),
+                const Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'How are you feeling today ?',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontFamily: 'SF Pro Display',
                     ),
-                  ),
-                  trailing: Image.asset(
-                    'assets/images/Walking the Dog.png',
-                    height: 90,
-                    width: 102,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 16, bottom: 22),
-                  child: Row(
+                const SizedBox(
+                  height: 22,
+                ),
+                SizedBox(
+                  height: 110,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      return FeelingItem(
+                        image: images[index],
+                        label: labels[index],
+                      );
+                    },
+                    itemCount: images.length,
+                  ),
+                ),
+                const SizedBox(
+                  height: 32,
+                ),
+                const CustomModyRow(
+                  text: 'Feature',
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    color: const Color(0xffECFDF3),
+                    borderRadius: BorderRadius.circular(18),
+                  ),
+                  child: Column(
                     children: [
-                      Container(
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: k2PrimaryColor,
+                      ListTile(
+                        title: const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 18),
+                          child: Text(
+                            'Positive vibes',
+                            style: TextStyle(
+                              color: Color(0xff344054),
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: 'SF Pro Display',
+                            ),
+                          ),
                         ),
-                        child: const Icon(
-                          Icons.play_arrow_rounded,
-                          color: Colors.white,
-                          size: 26,
+                        subtitle: const Padding(
+                          padding: EdgeInsets.only(bottom: 10),
+                          child: Text(
+                            'Boost your mood with positive vibes',
+                            maxLines: 2,
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black,
+                              fontFamily: 'SF Pro Display',
+                            ),
+                          ),
+                        ),
+                        trailing: Image.asset(
+                          'assets/images/Walking the Dog.png',
+                          height: 90,
+                          width: 102,
                         ),
                       ),
-                      const SizedBox(
-                        width: 16,
-                      ),
-                      const Text(
-                        '10 mins',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'SF Pro Display',
+                      Padding(
+                        padding: const EdgeInsets.only(left: 16, bottom: 22),
+                        child: Row(
+                          children: [
+                            Container(
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: k2PrimaryColor,
+                              ),
+                              child: const Icon(
+                                Icons.play_arrow_rounded,
+                                color: Colors.white,
+                                size: 26,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 16,
+                            ),
+                            const Text(
+                              '10 mins',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: 'SF Pro Display',
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],
                   ),
+                ),
+                const SizedBox(
+                  height: 32,
+                ),
+                const CustomModyRow(
+                  text: 'Exercise',
+                ),
+                const Row(
+                  children: [
+                    Expanded(
+                      child: ExerciseItem(
+                        color: Color(0xffF9F5FF),
+                        text: 'Relaxation',
+                        image: 'assets/images/Relax.png',
+                      ),
+                    ),
+                    SizedBox(
+                      width: 18,
+                    ),
+                    Expanded(
+                      child: ExerciseItem(
+                        color: Color(0xffFDF2FA),
+                        text: 'Meditation',
+                        image: 'assets/images/Relax.png',
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 28,
+                ),
+                const Row(
+                  children: [
+                    Expanded(
+                      child: ExerciseItem(
+                        color: Color(0xffF9F5FF),
+                        text: 'Beathing',
+                        image: 'assets/images/Relax.png',
+                      ),
+                    ),
+                    SizedBox(
+                      width: 18,
+                    ),
+                    Expanded(
+                      child: ExerciseItem(
+                        color: Color(0xffFDF2FA),
+                        text: 'Yoga',
+                        image: 'assets/images/Relax.png',
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 28,
                 ),
               ],
             ),
