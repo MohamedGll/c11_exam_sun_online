@@ -1,4 +1,3 @@
-import 'package:c11_exam_sun_online/constant.dart';
 import 'package:c11_exam_sun_online/widgets/custom_app_bar.dart';
 import 'package:c11_exam_sun_online/widgets/custom_mody_row.dart';
 import 'package:c11_exam_sun_online/widgets/exercise_item.dart';
@@ -134,8 +133,6 @@ class _CustomModyViewBodyState extends State<CustomModyViewBody> {
                         ),
                         trailing: Image.asset(
                           'assets/images/Walking the Dog.png',
-                          height: 90,
-                          width: 102,
                         ),
                       ),
                       Padding(
@@ -145,7 +142,7 @@ class _CustomModyViewBodyState extends State<CustomModyViewBody> {
                             Container(
                               decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: k2PrimaryColor,
+                                color: Color(0xff32D583),
                               ),
                               child: const Icon(
                                 Icons.play_arrow_rounded,
@@ -180,7 +177,7 @@ class _CustomModyViewBodyState extends State<CustomModyViewBody> {
                     effect: const WormEffect(
                       dotHeight: 8,
                       dotWidth: 8,
-                      activeDotColor: k2PrimaryColor,
+                      activeDotColor: Color(0xff98A2B3),
                       dotColor: Color(0xffD9D9D9),
                     ), // your preferred effect
                   ),

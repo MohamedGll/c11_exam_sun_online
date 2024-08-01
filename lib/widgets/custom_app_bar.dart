@@ -28,8 +28,8 @@ class CustomAppBar extends StatelessWidget {
           badgeContent: const CircleAvatar(
             radius: .1,
           ),
-          child: const Icon(
-            Icons.notifications,
+          child: const ImageIcon(
+            AssetImage('assets/images/alarm.png'),
             size: 28,
           ),
         )

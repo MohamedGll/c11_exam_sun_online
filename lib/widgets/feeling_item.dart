@@ -31,8 +31,9 @@ class FeelingItem extends StatelessWidget {
             label,
             style: const TextStyle(
               fontSize: 16,
-              fontWeight: FontWeight.w400,
+              fontWeight: FontWeight.w500,
               fontFamily: 'SF Pro Display',
+              color: Colors.black,
             ),
           ),
         ],
