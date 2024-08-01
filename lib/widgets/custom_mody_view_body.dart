@@ -4,15 +4,23 @@ import 'package:c11_exam_sun_online/widgets/custom_mody_row.dart';
 import 'package:c11_exam_sun_online/widgets/exercise_item.dart';
 import 'package:c11_exam_sun_online/widgets/feeling_item.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class CustomModyViewBody extends StatelessWidget {
+class CustomModyViewBody extends StatefulWidget {
   const CustomModyViewBody({super.key});
+
+  @override
+  State<CustomModyViewBody> createState() => _CustomModyViewBodyState();
+}
+
+class _CustomModyViewBodyState extends State<CustomModyViewBody> {
   final List<String> images = const [
     'assets/images/Frame1.png',
     'assets/images/Frame2.png',
     'assets/images/Frame4.png',
     'assets/images/Frame3.png',
   ];
+
   final List<String> labels = const [
     'Love',
     'Cool',
@@ -20,6 +28,7 @@ class CustomModyViewBody extends StatelessWidget {
     'Sad',
   ];
 
+  final pageController = PageController();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -159,6 +168,21 @@ class CustomModyViewBody extends StatelessWidget {
                         ),
                       ),
                     ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 18,
+                ),
+                Center(
+                  child: SmoothPageIndicator(
+                    controller: pageController, // PageController
+                    count: 3,
+                    effect: const WormEffect(
+                      dotHeight: 8,
+                      dotWidth: 8,
+                      activeDotColor: k2PrimaryColor,
+                      dotColor: Color(0xffD9D9D9),
+                    ), // your preferred effect
                   ),
                 ),
                 const SizedBox(
