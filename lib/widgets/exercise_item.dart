@@ -28,7 +28,7 @@ class ExerciseItem extends StatelessWidget {
             text,
             style: const TextStyle(
               fontSize: 16,
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w600,
               fontFamily: 'SF Pro Display',
             ),
           ),

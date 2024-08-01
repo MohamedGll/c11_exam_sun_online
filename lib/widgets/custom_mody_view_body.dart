@@ -183,7 +183,7 @@ class CustomModyViewBody extends StatelessWidget {
                       child: ExerciseItem(
                         color: Color(0xffFDF2FA),
                         text: 'Meditation',
-                        image: 'assets/images/Relax.png',
+                        image: 'assets/images/meditation.png',
                       ),
                     ),
                   ],
@@ -195,9 +195,9 @@ class CustomModyViewBody extends StatelessWidget {
                   children: [
                     Expanded(
                       child: ExerciseItem(
-                        color: Color(0xffF9F5FF),
+                        color: Color(0xffFFFAF5),
                         text: 'Beathing',
-                        image: 'assets/images/Relax.png',
+                        image: 'assets/images/beathing.png',
                       ),
                     ),
                     SizedBox(
@@ -205,9 +205,9 @@ class CustomModyViewBody extends StatelessWidget {
                     ),
                     Expanded(
                       child: ExerciseItem(
-                        color: Color(0xffFDF2FA),
+                        color: Color(0xffF0F9FF),
                         text: 'Yoga',
-                        image: 'assets/images/Relax.png',
+                        image: 'assets/images/yoga.png',
                       ),
                     ),
                   ],
