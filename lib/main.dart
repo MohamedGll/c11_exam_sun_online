@@ -1,4 +1,4 @@
-import 'package:c11_exam_sun_online/audi_books_view.dart';
+import 'package:c11_exam_sun_online/views/mody_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: AudiBooksView(),
+      home: ModyView(),
     );
   }
 }

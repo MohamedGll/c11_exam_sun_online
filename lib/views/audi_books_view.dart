@@ -2,7 +2,7 @@ import 'package:c11_exam_sun_online/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'widgets/custom_home_view_body.dart';
+import '../widgets/custom_home_view_body.dart';
 
 class AudiBooksView extends StatefulWidget {
   const AudiBooksView({super.key});
