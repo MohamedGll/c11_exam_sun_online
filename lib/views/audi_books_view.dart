@@ -1,7 +1,5 @@
 import 'package:c11_exam_sun_online/constant.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import '../widgets/custom_home_view_body.dart';
 
 class AudiBooksView extends StatefulWidget {
@@ -56,10 +54,12 @@ class _AudiBooksViewState extends State<AudiBooksView> {
         actions: const [
           Padding(
             padding: EdgeInsets.only(right: 18),
-            child: FaIcon(
-              FontAwesomeIcons.gear,
+            child: ImageIcon(
+              AssetImage(
+                'assets/images/Setting.png',
+              ),
+              size: 28,
               color: kPrimaryColor,
-              size: 24,
             ),
           ),
         ],
@@ -68,6 +68,16 @@ class _AudiBooksViewState extends State<AudiBooksView> {
       bottomNavigationBar: BottomNavigationBar(
         unselectedItemColor: const Color(0xff6A6A8B),
         selectedItemColor: kPrimaryColor,
+        selectedLabelStyle: const TextStyle(
+          fontFamily: 'SF Pro Display',
+          fontSize: 12,
+          fontWeight: FontWeight.w400,
+        ),
+        unselectedLabelStyle: const TextStyle(
+          fontFamily: 'SF Pro Display',
+          fontSize: 12,
+          fontWeight: FontWeight.w400,
+        ),
         currentIndex: selectedIndex,
         onTap: (index) {
           selectedIndex = index;
@@ -75,20 +85,26 @@ class _AudiBooksViewState extends State<AudiBooksView> {
         },
         items: const [
           BottomNavigationBarItem(
-            icon: FaIcon(
-              FontAwesomeIcons.house,
+            icon: ImageIcon(
+              AssetImage(
+                'assets/images/house.png',
+              ),
             ),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: FaIcon(
-              FontAwesomeIcons.magnifyingGlass,
+            icon: ImageIcon(
+              AssetImage(
+                'assets/images/Search.png',
+              ),
             ),
             label: 'Search',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.library_books_rounded,
+            icon: ImageIcon(
+              AssetImage(
+                'assets/images/Document.png',
+              ),
             ),
             label: 'Library',
           ),
