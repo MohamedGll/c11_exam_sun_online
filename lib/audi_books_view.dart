@@ -4,14 +4,14 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'widgets/custom_home_view_body.dart';
 
-class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+class AudiBooksView extends StatefulWidget {
+  const AudiBooksView({super.key});
 
   @override
-  State<HomeView> createState() => _HomeViewState();
+  State<AudiBooksView> createState() => _AudiBooksViewState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class _AudiBooksViewState extends State<AudiBooksView> {
   int selectedIndex = 0;
 
   @override
@@ -64,7 +64,7 @@ class _HomeViewState extends State<HomeView> {
           ),
         ],
       ),
-      body: const CustomHomeViewBody(),
+      body: const CustomAudiBooksViewBody(),
       bottomNavigationBar: BottomNavigationBar(
         unselectedItemColor: const Color(0xff6A6A8B),
         selectedItemColor: kPrimaryColor,

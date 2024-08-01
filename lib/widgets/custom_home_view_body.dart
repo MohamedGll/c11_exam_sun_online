@@ -1,9 +1,10 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
+import 'package:c11_exam_sun_online/widgets/best_seller_item.dart';
 import 'package:c11_exam_sun_online/widgets/custom_row.dart';
 import 'package:flutter/material.dart';
 
-class CustomHomeViewBody extends StatelessWidget {
-  const CustomHomeViewBody({super.key});
+class CustomAudiBooksViewBody extends StatelessWidget {
+  const CustomAudiBooksViewBody({super.key});
   final List<String> images = const [
     'assets/images/Image Placeholder 400x600.png',
     'assets/images/Image Placeholder 1.png',
@@ -17,7 +18,7 @@ class CustomHomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 4,
-      child: Column(
+      child: ListView(
         children: [
           const SizedBox(
             height: 28,
@@ -32,8 +33,14 @@ class CustomHomeViewBody extends StatelessWidget {
             backgroundColor: const Color(0xffF5F5FA),
             radius: 14,
             unselectedBackgroundColor: const Color(0xffF5F5FA),
-            contentPadding: const EdgeInsets.symmetric(horizontal: 28),
+            contentPadding: const EdgeInsets.symmetric(horizontal: 14),
             buttonMargin: const EdgeInsets.symmetric(horizontal: 16),
+            unselectedLabelStyle: const TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w400,
+              fontSize: 22,
+              fontFamily: 'SF Pro Display',
+            ),
             labelStyle: const TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.w400,
@@ -88,6 +95,27 @@ class CustomHomeViewBody extends StatelessWidget {
           ),
           const CustomRow(
             text: 'Best Seller',
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          // BestSellerItem(),
+          SizedBox(
+            height: 200,
+            width: double.infinity,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 32),
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return const Padding(
+                    padding: EdgeInsets.only(right: 18),
+                    child: BestSellerItem(),
+                  );
+                },
+                itemCount: 5,
+              ),
+            ),
           ),
         ],
       ),
